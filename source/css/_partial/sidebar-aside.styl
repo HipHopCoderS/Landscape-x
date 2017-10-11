@@ -1,0 +1,61 @@
+#sidebar
+  @media mq-normal
+    column(sidebar-column)
+
+.widget-wrap
+  margin: block-margin 0
+  @media mq-mobile
+    display: None
+
+.widget-title
+  @extend $block-caption
+  color: color-widget-background
+  margin-bottom: 7px
+
+.widget
+  color: color-sidebar-text
+  //text-shadow: 0 1px color-widget-background
+  background: color-widget-background
+  box-shadow: 7px 7px 7px color-border
+  // box-shadow: 0 -1px 4px color-widget-border inset
+  //border: 1px solid color-widget-border
+  padding: 15px
+  border-radius: 10px
+
+  a
+    color: color-grey
+    text-decoration: none
+    transition: all 0.3s
+    -moz-transition:all  0.3s /* Firefox 4 */
+    -webkit-transition:all  0.3s;     /* Safari and Chrome */
+    -o-transition:all  0.3s  /* Opera */
+    &:hover
+      text-decoration: none
+      color: color-link
+  ul, ol, dl
+    ul, ol, dl
+      margin-left: 15px
+      list-style: disc
+
+
+  ul
+    li
+      text-decoration: none
+      color: color-sidebar-text
+      margin-left: 0px
+      margin-right: 0px;
+      border-left: color-background solid 0px
+      padding-left: 0px
+      background: color-white
+      transition: all .3s
+      -moz-transition:all  .3s /* Firefox 4 */
+      -webkit-transition:all  .3s;     /* Safari and Chrome */
+      -o-transition:all  .3s  /* Opera */
+      &:hover
+        text-decoration: none
+        color: color-link
+        margin-left: -15px
+        margin-right: -15px;
+        border-left: color-green solid 7px
+        padding-left: 15px
+        background: color-background

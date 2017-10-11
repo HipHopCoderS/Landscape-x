@@ -1,0 +1,5 @@
+<nav id="mobile-nav">
+  <% for (var i in config.mobile_menu){ %>
+    <a href="<%- url_for(config.mobile_menu[i]) %>" class="mobile-nav-link"><i class="fa fa-<%= i%>" aria-hidden="true"></i><%= __(i)%></a>
+  <% } %>
+</nav>

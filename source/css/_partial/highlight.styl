@@ -1,0 +1,194 @@
+// https://github.com/chriskempson/tomorrow-theme
+
+//highlight-background   = #202327
+
+//highlight-background   = #F5F5F5
+//highlight-current-line = #efefef
+//highlight-selection    = #d6d6d6
+//highlight-foreground   = #4d4d4c
+//highlight-comment      = #8e908c
+//highlight-red          = #d54e53
+//highlight-orange       = #f5871f
+//highlight-yellow       = #49BE38
+//highlight-green        = #b9ca4a
+//highlight-aqua         = #3e999f
+//highlight-blue         = #2aa198
+//highlight-purple       = #8959a8
+
+highlight-background   = #073642
+highlight-current-line = #657b83
+highlight-selection    = #d33628
+highlight-foreground   = #93a1a1
+highlight-comment      = #586e75
+highlight-red          = #dc322f
+highlight-orange       = #cb4b16
+highlight-yellow       = #b58900
+highlight-green        = #859900
+highlight-aqua         = #2aa198
+highlight-blue         = #268bd2
+highlight-purple       = #6c71c4
+
+
+
+
+$code-block
+  background: highlight-background
+  //margin: 0 17px
+  padding: 7px article-padding
+  border: 1px solid color-border
+  //border-left: solid 5px color-green;
+  border-radius: 5px;
+  overflow: auto
+  color: highlight-foreground
+  line-height: font-size * line-height
+  @media mq-mobile
+    margin: 0 article-padding * -1
+    border-radius: 0px
+    border-width: 1px  0px
+  @media mq-tablet
+    margin: 0 article-padding * -1
+    border-radius: 0px
+    border-width: 1px 0px
+
+$line-numbers
+  color: #afafaf !important;
+  font-size: 0.85em
+
+.article-entry
+  pre, code
+    font-family: font-mono
+  code
+      padding: 1px 4px;
+      color: #c7254e;
+      background-color: #f9f2f4;
+      font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+      //font-size: 12px;
+      border-radius: 3px;
+
+
+  pre
+    @extend $code-block
+    code
+      background: none
+      text-shadow: none
+      padding: 0
+      border: none
+  .highlight
+    @extend $code-block
+    pre
+      border: none
+      margin: 0
+      padding: 0
+    table
+      margin: 0
+      width: auto
+    td
+      border: none
+      padding: 0
+    figcaption
+      clearfix()
+      font-size: 0.85em
+      color: highlight-comment
+      line-height: 1em
+      margin-bottom: 1em
+      a
+        float: right
+    .gutter pre
+      @extend $line-numbers
+      text-align: right
+      padding-right: 5px;
+      margin-right: 10px;
+      border-right: 3px solid #6ce26c;
+      border-radius: 0px;
+    .line
+      height: font-size * line-height
+  .gist
+    margin: 0 article-padding * -1
+    border-style: solid
+    border-color: color-border
+    border-width: 1px 0
+    background: highlight-background
+    padding: 15px article-padding 15px 0
+    .gist-file
+      border: none
+      font-family: font-mono
+      margin: 0
+      .gist-data
+        background: none
+        border: none
+        .line-numbers
+          @extend $line-numbers
+          background: none
+          border: none
+          padding: 0 20px 0 0
+        .line-data
+          padding: 0 !important
+      .highlight
+        margin: 0
+        padding: 0
+        border: none
+      .gist-meta
+        background: highlight-background
+        color: highlight-comment
+        font: 0.85em font-sans
+        text-shadow: 0 0
+        padding: 0
+        margin-top: 1em
+        margin-left: article-padding
+        a
+          color: color-link
+          font-weight: normal
+          &:hover
+            text-decoration: underline
+
+pre
+  .comment
+  .preprocessor
+    color: highlight-comment
+  .tag
+    color: highlight-foreground
+  .title
+  .variable
+  .regexp
+  .ruby .constant
+  .xml .tag .title
+  .xml .pi
+  .xml .doctype
+  .html .doctype
+  .css .id
+  .css .class
+  .css .pseudo
+    color: highlight-blue
+  .number
+  .built_in
+  .literal
+  .constant
+    color: highlight-purp
+  .params
+    color: highlight-orange
+  .class
+  .ruby .class .title
+  .css .rules .attribute
+  .attribute
+    color: highlight-blue
+  .string
+  .value
+  .inheritance
+  .header
+  .ruby .symbol
+  .xml .cdata
+    color: highlight-yellow
+  .css .hexcolor
+    color: highlight-aqua
+  .function
+  .python .decorator
+  .python .title
+  .ruby .function .title
+  .ruby .title .keyword
+  .perl .sub
+  .javascript .title
+  .coffeescript .title
+    color: highlight-green
+  .keyword
+  .javascript .function
+    color: highlight-green

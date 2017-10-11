@@ -1,0 +1,67 @@
+if sidebar is bottom
+  @import "sidebar-bottom"
+else
+  @import "sidebar-aside"
+
+.widget
+  @extend $base-style
+  line-height: line-height
+  word-wrap: break-word
+  font-size: 0.77em
+  ul, ol
+    list-style: none
+    margin: 0
+    ul, ol
+      margin: 0 20px
+    ul
+      list-style: disc
+    ol
+      list-style: decimal
+    li
+      word-break: keep-all
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      margin-bottom: 5px
+      transition: all .3s
+      -moz-transition:all  .3s /* Firefox 4 */
+      -webkit-transition:all  .3s;     /* Safari and Chrome */
+      -o-transition:all  .3s  /* Opera */
+      &:hover
+        margin-bottom: 5px
+        white-space: normal
+
+.category-list-link
+.tag-list-link
+.archive-list-link
+  float: left
+
+
+.category-list-count
+.tag-list-count
+.archive-list-count
+  float: right
+  padding: 0 7px
+  color: color-widget-background
+  border-radius: 30px
+  background: color-green
+  font-size: 0.85em
+  //&:before
+  //  content: "("
+  //&:after
+  //  content: ")"
+
+.tagcloud
+  a
+    word-break: keep-all
+    margin-right: 5px
+    transition: all .3s
+    -moz-transition:all  .3s /* Firefox 4 */
+    -webkit-transition:all  .3s;     /* Safari and Chrome */
+    -o-transition:all  .3s  /* Opera */
+    &:hover
+      font-size: 50px
+      color: color-widget-background
+      background: color-green
+      border-radius: 6px
+      padding: 0px 5px

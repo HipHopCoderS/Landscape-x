@@ -1,0 +1,14 @@
+<% if (site.categories.length){ %>
+  <div class="widget-wrap">
+    <h3 class="widget-title" data-scroll-reveal="enter top and over 0.7s" ><i class="fa fa-tasks"></i><%= __('categorie') %></h3>
+    <div class="widget">
+      <%- list_categories() %>
+    </div>
+  </div>
+<% } %>
+
+  <script>
+  $(document).on("click", "ul.category-list li.category-list-item", function () {
+    window.location.href = $(this).find('a').attr('href')
+  })
+  </script>

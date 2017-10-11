@@ -1,0 +1,167 @@
+<% if (site.posts.length){ %>
+  <style>
+  *{ margin: 0; padding: 0;}
+  .tooltips{ border-width: 1px; border-style: solid; position: absolute; display: none; border-radius: 3px; opacity: 0; filter:alpha( opacity = 0) ; z-index: 999;}
+  .tooltips p.content{ padding: 5px; }
+  .tooltips .triangle-front,.tooltips .triangle-back{ width: 0; height: 0; overflow: hidden; border-width: 8px; border-style: solid; position: absolute; border-color: transparent ; top: 100%; left: 50%; margin-left: -8px;}
+  .tooltips .triangle-back{ margin-top: -1px;}
+
+  .toolTipInfo{ border-color: #000; background-color: #EEEEEE;}
+  .toolTipInfo .triangle-front{ border-top-color: #EEEEEE;}
+  .toolTipInfo .triangle-back{ border-top-color: #EEEEEE;}
+
+
+  .icoSize{font-size: 2em}
+  </style>
+
+
+
+  <div class="widget-wrap">
+    <h3 class="widget-title" data-scroll-reveal="enter top and over 0.7s" ><i class="fa fa-link"></i><%= __('links') %></h3>
+    <div class="widget" style="z-index: 1;">
+
+
+
+
+
+      <!-- <ul> -->
+        <% for (var i in (config.links)){ %>
+          <!-- <li> -->
+          <% if ((i == "weixin" || i == "qq")  && config.links[i]){ %>
+            <a id="<%= i%>-icon-color" class="weight-icon-link"  href="javascript:;"   id="<%= i%>-icon" target="_blank" tooltips="<img src='<%- config["cdn-url"]%><%- config.links[i]%>'>">
+                <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-<%= i%>  fa-stack-1x fa-inverse"></i>
+                  </span>
+              </a>
+          <% } %>
+
+          <% if (i == "github-alt" && config.links[i]) { %>
+
+                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank"  href="https://github.com/<%- config.links[i] %>">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-<%= i%> fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+          <% } %>
+
+          <% if (i == "twitter" && config.links[i]) { %>
+                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank" href="https://twitter.com/<%= config.links[i] %>">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-<%= i%> fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+          <% } %>
+
+          <% if (i == "zhihu" && config.links[i]) { %>
+                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank" href="https://www.zhihu.com/people/<%= config.links[i] %>">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa  fa-stack-1x fa-inverse">知</i>
+                      </span>
+                  </a>
+          <% } %>
+
+          <% if (i == "weibo" && config.links[i]) { %>
+                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank" href="http://weibo.com/<%= config.links[i] %>">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-<%= i%> fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+          <% } %>
+
+          <% if (i == "facebook" && config.links[i]) { %>
+                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank" href="https://www.facebook.com/<%= config.links[i]%>">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-<%= i%> fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+          <% } %>
+
+          <% if (i == "linkedin" && config.links[i]) { %>
+                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank"  href="https://www.linkedin.com/in/<%= config.links[i] %>">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-<%= i%> fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+          <% } %>
+
+          <% if (i == "music" && config.links[i]) { %>
+                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank"  href="<%= config.links[i] %>" data-toggle="tooltip" data-placement="top" title="5Sing歌曲">
+                  <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-<%= i%>  fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+          <% } %>
+
+
+          <% if (i == "envelope-o" && config.links[i]) { %>
+                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank"  href="<%= config.links[i] %>" data-toggle="tooltip" data-placement="top" title="请多多交流！">
+                  <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-<%= i%>  fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+          <% } %>
+
+          <% if (i == "csdn" && config.links[i]) { %>
+              <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank" href="http://blog.csdn.net/<%= config.links[i]%>" data-toggle="tooltip" data-placement="top" title="CSDN博客">
+                          <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa fa-stack-1x fa-inverse">C</i>
+                          </span>
+              </a>
+          <% } %>
+
+
+          <!-- </li> -->
+        <% } %>
+      <!-- </ul> -->
+    </div>
+  </div>
+
+
+  <script>
+  $.fn.extend({
+    hoverTips : function (){
+      var self = $(this);
+      var sw = self.get(0).switch;
+      if( !sw ) {
+        sw = true;
+        var content = self.attr("tooltips");
+        var htmlDom = $("<div class='tooltips'>")
+            .addClass("toolTipInfo")
+            .html("<p class='content'></p>"
+                + "<p class='triangle-front'></p>"
+                + "<p class='triangle-back'></p>");
+        htmlDom.find("p.content").html( content );
+      }
+      self.on("mouseover",function(){
+        $("body").append( htmlDom );
+        var left = self.offset().left - htmlDom.outerWidth()/2 + self.outerWidth()/2;
+        var top = self.offset().top - htmlDom.outerHeight() - parseInt(htmlDom.find(".triangle-front").css("border-width"));
+        htmlDom.css({"left":left,"top":top - 10,"display":"block"});
+        htmlDom.stop().animate({ "top" : top ,"opacity" : 1},300);
+      });
+      self.on("mouseout",function(){
+        var top = parseInt(htmlDom.css("top"));
+        htmlDom.stop().animate({ "top" : top - 10 ,"opacity" : 0},300,function(){
+          htmlDom.remove();
+          sw = false;
+        });
+      });
+    },
+
+  });
+
+  $("#weixin-icon-color").hoverTips();
+  $("#qq-icon-color").hoverTips();
+  </script>
+
+<% } %>

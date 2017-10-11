@@ -1,0 +1,198 @@
+# Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: HipHop_&_Coder
+subtitle: 事在人为，功不唐捐！
+description: 喜欢HipHop的程序猿！
+author: 卡尔西
+language: zh-CN
+timezone: Asia/ShangHai
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://blog.rapcoder.com
+root: /
+# permalink: :year/:month/:day/:title/
+permalink: :title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: true
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page:
+pagination_dir: page
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+Plugins:
+  - hexo-generator-feed
+  - hexo-generator-sitemap
+
+
+
+#sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+
+
+## Themes: http://hexo.io/themes/
+theme: landscape-x
+
+
+
+
+#ShowPageNumber
+index_generator:
+  per_page: 5
+
+archive_generator:
+  per_page:
+  yearly: true
+  monthly: true
+
+tag_generator:
+  per_page:
+
+
+
+# Deployment
+## Docs: http://hexo.io/docs/deployment.html
+# Deployment github and coding
+deploy:
+  type: git
+  message: "Update My Blog"
+  repo:
+    github: git@xxxxxx, master
+    coding:
+
+
+###########################################################################
+###########################################################################
+#################         网站配置                    ######################
+###########################################################################
+###########################################################################
+
+# Header
+menu:
+  home: /
+  archive: /archives
+  user: /about.html
+
+mobile_menu:
+  home: /
+  archive: /archives
+  user: /about.html
+
+rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+mathjax: true
+
+
+# Sidebar
+sidebar: right
+widgets:
+- recent_posts
+- category
+#- tag
+- tagcloud
+- archive
+#- recent_comments
+- links
+
+
+
+# Links
+links:
+    github-alt: hiphopcoders
+    twitter:
+    zhihu: HipHopCoder
+    weixin: weixin.png
+    qq: qq.png
+    weibo: http://weibo.com/p/1005051632283810/home
+    douban:
+    facebook:
+    linkedin:
+    # 个人邮件
+    envelope-o: mailto:hiphopcoder@163.com
+    music: http://5sing.kugou.com/fc/8637366.html
+    csdn: a542551042
+
+
+
+
+# Miscellaneous
+favicon: /img/favicon.ico
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+
+#######第三方服务配置信息########
+disqus_shortname:  rapcoder
+
+# img CDN path
+cdn-url:
+
+# Baidu share
+baidushare: true
+
+# Baidu Analytics ID
+baidu_analytics:
+baidu_site_verification:
+
+# Google Webmaster tools verification setting
+# See: https://www.google.com/webmasters/
+google_site_verification:
+
+# Google Analytics
+google_analytics:
+
+#qihu verification setting
+qihu_site_verification:
+qihu_union_verify:

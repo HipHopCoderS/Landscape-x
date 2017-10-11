@@ -1,0 +1,5 @@
+<aside   id="sidebar"<% if (config.sidebar === 'bottom'){ %> class="outer"<% } %>>
+  <% config.widgets.forEach(function(widget){ %>
+    <%- partial('_widget/' + widget) %>
+  <% }) %>
+</aside>
