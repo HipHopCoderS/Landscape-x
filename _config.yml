@@ -196,3 +196,11 @@ google_analytics:
 #qihu verification setting
 qihu_site_verification:
 qihu_union_verify:
+
+
+# Algolia
+algolia_applicationID:
+algolia_apiKey:
+algolia_adminApiKey:
+algolia_indexName:
+algolia_chunkSize: 5000
