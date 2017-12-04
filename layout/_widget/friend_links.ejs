@@ -1,0 +1,17 @@
+<% if (site.posts.length){ %>
+    <div class="widget-wrap">
+  
+      <h3 class="widget-title" data-scroll-reveal="enter top and over 0.7s"><i class="fa fa-group"></i><%= __('friend_links') %></h3>
+      <div class="widget">
+        <ul>
+        <% for (var i in (config.friend_links)){ %>
+            <li onclick="javascript:document.getElementById('friend_links_item').click();">
+              <a id="friend_links_item" href="<%= config.friend_links[i] %>"><i class="fa  fa-arrow-circle-right" style="margin-right:7px"></i><%= i %></a>
+            </li>
+
+        <% } %>
+        </ul>
+      </div>
+    </div>
+  <% } %>
+  

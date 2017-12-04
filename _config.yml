@@ -143,7 +143,7 @@ widgets:
 - archive
 #- recent_comments
 - links
-
+- friend_links
 
 
 # Links
@@ -162,6 +162,11 @@ links:
     music: http://5sing.kugou.com/fc/8637366.html
     csdn: a542551042
 
+
+# Friend_links
+# Format    display name :  url
+friend_links:
+    百度 : http://www.baidu.com 
 
 
 
@@ -197,10 +202,10 @@ google_analytics:
 qihu_site_verification:
 qihu_union_verify:
 
-
 # Algolia
-algolia_applicationID:
-algolia_apiKey:
-algolia_adminApiKey:
-algolia_indexName:
-algolia_chunkSize: 5000
+algolia:
+  applicationID: ''
+  apiKey: ''
+  adminApiKey: ''
+  indexName: ''
+  chunkSize: 5000

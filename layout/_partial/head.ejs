@@ -74,14 +74,19 @@
   <script src="/js/algolia-search.js" type="text/javascript"></script>
   <%- partial('analytics') %>
 
+  
+  
+  <!-- <% for (var i in (config.algolia)){ %>
+  <% } %> -->
+
   <script>
    var CONFIG = {
     root: '/',
     algolia: {
-          applicationID: "<%= config.algolia_applicationID %>",
-          apiKey: "<%= config.algolia_apiKey%>",
-          adminApiKey: "<%= config.algolia_adminApiKey %>",
-          indexName: "<%= config.algolia_indexName %>",
+          applicationID: "<%= config.algolia['applicationID'] %>",
+          apiKey: "<%= config.algolia['apiKey']%>",
+          adminApiKey: "<%= config.algolia['adminApiKey'] %>",
+          indexName: "<%= config.algolia['indexName'] %>",
           hits: {"per_page":10},
           labels: {"input_placeholder":"搜索...","hits_empty":"未发现与 「${query}」相关的内容","hits_stats":"${hits} 条相关条目，使用了 ${time} 毫秒"}
         }
