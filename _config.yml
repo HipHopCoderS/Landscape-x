@@ -166,7 +166,7 @@ links:
 # Friend_links
 # Format    display name :  url
 friend_links:
-    百度 : http://www.baidu.com 
+    百度 : http://www.baidu.com
 
 
 
@@ -179,6 +179,16 @@ fb_app_id:
 
 
 #######第三方服务配置信息########
+# comments
+# gittalk.enable  true  or  false
+gitalk:
+  enable: false
+  clientID:
+  clientSecret:
+  repo:
+  owner:
+  admin:
+
 disqus_shortname:  rapcoder
 
 # img CDN path
