@@ -71,5 +71,32 @@ links:
     csdn: a542551042
 ```
 
+`支持gitalk  等第三方平评论`
+
+```
+# comments 
+# gittalk.enable  true  or  false 
+gitalk:
+  enable: false 
+  clientID: 
+  clientSecret: 
+  repo: 
+  owner: 
+  admin: 
+
+disqus_shortname:  rapcoder
+```
+
+`支持Algolia第三方搜索`
+
+```
+# Algolia
+algolia:
+  applicationID: ''
+  apiKey: ''
+  adminApiKey: ''
+  indexName: ''
+  chunkSize: 5000
+```
 如有问题欢迎随时联系我！
 Thanks!
