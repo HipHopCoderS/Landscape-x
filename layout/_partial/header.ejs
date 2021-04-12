@@ -1,43 +1,40 @@
 <header id="header">
-  <div id="banner"></div>
-  <div data-scroll-reveal="enter top"  id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="<%- url_for() %>" id="logo"><%= config.title %></a>
-      </h1>
-      <% if (config.subtitle){ %>
-        <h2 id="subtitle-wrap">
-          <a href="<%- url_for() %>" id="subtitle"><%= config.subtitle %></a>
-        </h2>
-      <% } %>
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        <% for (var i in config.menu){ %>
-          <a class="main-nav-link" href="<%- url_for(config.menu[i]) %>"><i class="fa fa-<%= i%>" aria-hidden="true"></i><%= __(i) %></a>
+
+    <% if (config.cdn_url) { %>
+        <div id="banner" style="background: url('<%= config.cdn_url %><%= config.banner_img %>') center #000"
+        ></div>
+    <% } else {%>
+        <div id="banner" style="background: url('/img/<%= config.banner_img %>') center #000"></div>
         <% } %>
-      </nav>
-      <nav id="sub-nav">
-        <% if (config.rss){ %>
-          <a  class="nav-icon" href="<%- config.rss %>" title="RSS Feed"><i class="fa fa-rss" aria-hidden="true"></i></a>
-        <% } %>
-        <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search"><i class="fa fa-search" aria-hidden="true"></i></a>
-      </nav>
-        <div id="local-search-input"></div>
-      <!-- 百度搜索 -->
-     <!-- <div id="search-form-wrap">
-        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
-          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
-          <input type="submit" value="" class="search-form-submit">
-          <input name=tn type=hidden value="bds">
-          <input name=cl type=hidden value="3">
-          <input name=ct type=hidden value="2097152">
-          <input type="hidden" name="si" value="<%- config.url.replace(/^https?:\/\//, '') %>">
-        </form>
-      </div>
-      -->
-   
+    <div data-scroll-reveal="enter top" id="header-outer" class="outer">
+        <div id="header-title" class="inner">
+            <h1 id="logo-wrap">
+                <a href="<%- url_for() %>" id="logo"><%= config.title %></a>
+            </h1>
+            <% if (config.subtitle){ %>
+                <h2 id="subtitle-wrap">
+                    <a href="<%- url_for() %>" id="subtitle"><%= config.subtitle %></a>
+                </h2>
+            <% } %>
+        </div>
+        <div id="header-inner" class="inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                <% for (var i in config.menu){ %>
+                    <a class="main-nav-link" href="<%- url_for(config.menu[i]) %>"><i class="fa fa-<%= i %>"
+                                                                                      aria-hidden="true"></i><%= __(i) %>
+                    </a>
+                <% } %>
+            </nav>
+            <nav id="sub-nav">
+                <% if (config.rss){ %>
+                    <a class="nav-icon" href="<%- config.rss %>" title="RSS Feed"><i class="fa fa-rss"
+                                                                                     aria-hidden="true"></i></a>
+                <% } %>
+                <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search"><i class="fa fa-search"
+                                                                                        aria-hidden="true"></i></a>
+            </nav>
+            <div id="local-search-input"></div>
+        </div>
     </div>
-  </div>
 </header>

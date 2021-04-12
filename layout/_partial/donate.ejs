@@ -1,0 +1,32 @@
+<! -- 添加捐赠图标 -->
+<div class ="post-donate" data-scroll-reveal="enter top and over 0.7s">
+    <div id="donate_board" class="donate_bar center" >
+        <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+        <span class="donate_txt">
+           ↑<br>
+           <%=config.donate_message%>
+        </span>
+        <br>
+    </div>
+    <div id="donate_guide" class="donate_bar center hidden">
+    <% if (config.cdn_url) { %>
+        <img id="alipay_img" src="<%= config.cdn_url %><%=config.Alipay%>" alt="支付宝打赏">
+        <img id="wechat_img" src="<%= config.cdn_url %><%=config.WeChatpay%>" alt="微信打赏">
+        ></div>
+    <% } else {%>
+        <img id="alipay_img" src="/img/<%=config.Alipay%>" alt="支付宝打赏">
+        <img id="wechat_img" src="/img/<%=config.WeChatpay%>" alt="微信打赏">
+    <% } %>
+    </div>
+    <script type="text/javascript">
+        document.getElementById('btn_donate').onclick = function(){
+            // $('#donate_board').addClass('hidden');
+            if($("#donate_guide").is(":hidden")){
+                $('#donate_guide').removeClass('hidden');
+            }else {
+                $('#donate_guide').addClass('hidden');
+            }
+        }
+    </script>
+</div>
+<! -- 添加捐赠图标 -->

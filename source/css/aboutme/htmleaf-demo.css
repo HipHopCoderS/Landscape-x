@@ -78,8 +78,8 @@ a:hover,a:focus{color:#74777b;}
 	margin-bottom: 0;
 	letter-spacing: -1px;
 	text-align: center;
-	//background: #66677c;
-	background: url("http://7xpcdg.com1.z0.glb.clouddn.com/headerNew.png") center;
+	/*background: #66677c;*/
+	background: url("https://hexo-ali.oss-cn-beijing.aliyuncs.com/headerNew.png") center;
   background-size: cover;
 }
 
@@ -178,9 +178,9 @@ a:hover,a:focus{color:#74777b;}
 /****/
 .related {
 	color: #fff;
-	background: url(http://7xpcdg.com1.z0.glb.clouddn.com/footerNew.jpg) center;
-  background-size: cover;
-	//background: #494A5F;
+	background: url(https://hexo-ali.oss-cn-beijing.aliyuncs.com/footerNew.jpeg) center;
+    background-size: cover;
+	/*background: #494A5F;*/
 	text-align: center;
 	font-size: 1.25em;
 	padding: 0 0;

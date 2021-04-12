@@ -1,24 +1,29 @@
-<footer  id="footer">
-  <% if (config.sidebar === 'bottom'){ %>
-    <%- partial('_partial/sidebar') %>
-  <% } %>
-  <div  data-scroll-reveal="enter bottom"  class="outer">
-    <div id="footer-info" class="inner">
-      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-      .
-      Theme by <a href="https://github.com/HipHopCoderS/Landscape-x" target="_blank">Landscape-x</a>
-    </div>
+<% if (config.cdn_url) { %>
+<footer id="footer" style="background: url('<%= config.cdn_url %><%= config.footer_img %>') center #000">
+    <% } else { %>
+    <footer id="footer" style="background: url('/img/<%= config.footer_img %>') center #000">
+        <% } %>
+        <% if (config.sidebar === 'bottom'){ %>
+            <%- partial('_partial/sidebar') %>
+        <% } %>
+        <div data-scroll-reveal="enter bottom" class="outer">
+            <div id="footer-info" class="inner">
+                &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+                .
+                Theme by <a href="https://github.com/HipHopCoderS/Landscape-x" target="_blank">Landscape-x</a>
+            </div>
 
-    <div id="footer-info" class="inner">
-        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-      <span id="busuanzi_container_site_pv"> 访问量
-      <font color="#FF3030"><i class="fa fa-heartbeat"></i></i></font>
+            <div id="footer-info" class="inner">
+                <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                <span id="busuanzi_container_site_pv"> 访问量
+      <font color="#FF3030"><i class="fa fa-heartbeat"></i></font>
       <span id="busuanzi_value_site_pv"></span>次</span>
 
-      <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257415698'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257415698%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                    document.write(unescape("%3Cspan id='cnzz_stat_icon_1257415698'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257415698%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 
-    </div>
-  </div>
+            </div>
+        </div>
 
-</footer>
+    </footer>

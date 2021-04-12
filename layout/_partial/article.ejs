@@ -29,11 +29,7 @@
         </span>
         <%- post.content %>
       <% } %>
-
     </div>
-
-
-
 
 
     <footer class="article-footer">
@@ -42,13 +38,6 @@
       <% } else { %>
         <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
       <% } %>
-
-      <% if (post.comments && (config.gitalk)){ %>
-        <a href="<%- post.permalink %>#gitalk-container" class="article-comment-link"><%= __('comments') %></a>
-      <% } else if (post.comments && config.disqus_shortname){ %>
-        <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comments') %></a>
-      <% } %>
-
       <%- partial('post/tag') %>
     </footer>
   </div>
@@ -57,18 +46,8 @@
   <% } %>
 </article>
 
-
-
-<% if (!index && post.comments && (config.duoshuo_shortname)){ %>
- <section class="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="<%= post.path %>" data-title="<%= post.title %>" data-url="<%= post.permalink %>"></div>
-  </section>
- <% } else if (!index && post.comments && config.disqus_shortname){ %>
-  <section class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-  </section> 
+<% if (!index && config.donate){ %>
+    <%- partial('donate') %>
 <% } %>
 
 

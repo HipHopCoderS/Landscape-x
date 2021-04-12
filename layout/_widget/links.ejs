@@ -1,167 +1,249 @@
 <% if (site.posts.length){ %>
-  <style>
-  *{ margin: 0; padding: 0;}
-  .tooltips{ border-width: 1px; border-style: solid; position: absolute; display: none; border-radius: 3px; opacity: 0; filter:alpha( opacity = 0) ; z-index: 999;}
-  .tooltips p.content{ padding: 5px; }
-  .tooltips .triangle-front,.tooltips .triangle-back{ width: 0; height: 0; overflow: hidden; border-width: 8px; border-style: solid; position: absolute; border-color: transparent ; top: 100%; left: 50%; margin-left: -8px;}
-  .tooltips .triangle-back{ margin-top: -1px;}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-  .toolTipInfo{ border-color: #000; background-color: #EEEEEE;}
-  .toolTipInfo .triangle-front{ border-top-color: #EEEEEE;}
-  .toolTipInfo .triangle-back{ border-top-color: #EEEEEE;}
+        .tooltips {
+            border-width: 1px;
+            border-style: solid;
+            position: absolute;
+            display: none;
+            border-radius: 3px;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            z-index: 999;
+        }
+
+        .tooltips p.content {
+            padding: 5px;
+        }
+
+        .tooltips .triangle-front, .tooltips .triangle-back {
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            border-width: 8px;
+            border-style: solid;
+            position: absolute;
+            border-color: transparent;
+            top: 100%;
+            left: 50%;
+            margin-left: -8px;
+        }
+
+        .tooltips .triangle-back {
+            margin-top: -1px;
+        }
+
+        .toolTipInfo {
+            border-color: #000;
+            background-color: #EEEEEE;
+        }
+
+        .toolTipInfo .triangle-front {
+            border-top-color: #EEEEEE;
+        }
+
+        .toolTipInfo .triangle-back {
+            border-top-color: #EEEEEE;
+        }
 
 
-  .icoSize{font-size: 2em}
-  </style>
+        .icoSize {
+            font-size: 2em
+        }
+    </style>
 
+    <div class="widget-wrap">
+        <h3 class="widget-title" data-scroll-reveal="enter top and over 0.7s"><i
+                    class="fa fa-link"></i><%= __('links') %></h3>
+        <div class="widget" style="z-index: 1;">
 
-
-  <div class="widget-wrap">
-    <h3 class="widget-title" data-scroll-reveal="enter top and over 0.7s" ><i class="fa fa-link"></i><%= __('links') %></h3>
-    <div class="widget" style="z-index: 1;">
-
-
-
-
-
-      <!-- <ul> -->
-        <% for (var i in (config.links)){ %>
-          <!-- <li> -->
-          <% if ((i == "weixin" || i == "qq")  && config.links[i]){ %>
-            <a id="<%= i%>-icon-color" class="weight-icon-link"  href="javascript:;"   id="<%= i%>-icon" target="_blank" tooltips="<img src='<%- config["cdn-url"]%><%- config.links[i]%>'>">
+            <!-- <ul> -->
+            <% for (var i in (config.links)){ %>
+                <!-- <li> -->
+                <% if ((i == "weixin" || i == "qq") && config.links[i]){ %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" href="javascript:;" id="<%= i %>-icon"
+                       target="_blank"
+                    <% if (config.cdn_url) { %>
+                       tooltips="<img src='<%- config["cdn_url"] %><%- config.links[i] %>'>"
+                    <% } else { %>
+                       tooltips="<img src='/img/<%- config.links[i] %>'>"
+                            <% } %>
+                    >
                 <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-<%= i%>  fa-stack-1x fa-inverse"></i>
+                      <i class="fa fa-<%= i %>  fa-stack-1x fa-inverse"></i>
                   </span>
-              </a>
-          <% } %>
+                    </a>
+                <% } %>
 
-          <% if (i == "github-alt" && config.links[i]) { %>
-
-                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank"  href="https://github.com/<%- config.links[i] %>">
+                <% if (i == "github-alt" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank"
+                       href="<%- config.links[i] %>">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-<%= i%> fa-stack-1x fa-inverse"></i>
+                          <i class="fa fa-<%= i %> fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-          <% } %>
+                    </a>
+                <% } %>
 
-          <% if (i == "twitter" && config.links[i]) { %>
-                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank" href="https://twitter.com/<%= config.links[i] %>">
+                <% if (i == "twitter" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank"
+                       href="<%= config.links[i] %>">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-<%= i%> fa-stack-1x fa-inverse"></i>
+                          <i class="fa fa-<%= i %> fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-          <% } %>
+                    </a>
+                <% } %>
 
-          <% if (i == "zhihu" && config.links[i]) { %>
-                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank" href="https://www.zhihu.com/people/<%= config.links[i] %>">
+                <% if (i == "zhihu" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank"
+                       href="<%= config.links[i] %>">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa  fa-stack-1x fa-inverse">知</i>
                       </span>
-                  </a>
-          <% } %>
+                    </a>
+                <% } %>
 
-          <% if (i == "weibo" && config.links[i]) { %>
-                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank" href="http://weibo.com/<%= config.links[i] %>">
+                <% if (i == "weibo" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank"
+                       href="<%= config.links[i] %>">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-<%= i%> fa-stack-1x fa-inverse"></i>
+                          <i class="fa fa-<%= i %> fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-          <% } %>
+                    </a>
+                <% } %>
 
-          <% if (i == "facebook" && config.links[i]) { %>
-                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank" href="https://www.facebook.com/<%= config.links[i]%>">
+                <% if (i == "facebook" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank"
+                       href="<%= config.links[i] %>">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-<%= i%> fa-stack-1x fa-inverse"></i>
+                          <i class="fa fa-<%= i %> fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-          <% } %>
+                    </a>
+                <% } %>
 
-          <% if (i == "linkedin" && config.links[i]) { %>
-                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank"  href="https://www.linkedin.com/in/<%= config.links[i] %>">
+                <% if (i == "linkedin" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank"
+                       href="<%= config.links[i] %>">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-<%= i%> fa-stack-1x fa-inverse"></i>
+                          <i class="fa fa-<%= i %> fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-          <% } %>
+                    </a>
+                <% } %>
 
-          <% if (i == "music" && config.links[i]) { %>
-                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank"  href="<%= config.links[i] %>" data-toggle="tooltip" data-placement="top" title="5Sing歌曲">
+                <% if (i == "music" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank" href="<%= config.links[i] %>"
+                       data-toggle="tooltip" data-placement="top" title="音乐">
                   <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-<%= i%>  fa-stack-1x fa-inverse"></i>
+                          <i class="fa fa-<%= i %>  fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-          <% } %>
+                    </a>
+                <% } %>
 
 
-          <% if (i == "envelope-o" && config.links[i]) { %>
-                  <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank"  href="<%= config.links[i] %>" data-toggle="tooltip" data-placement="top" title="请多多交流！">
+                <% if (i == "envelope-o" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank" href="<%= config.links[i] %>"
+                       data-toggle="tooltip" data-placement="top" title="请多多交流！">
                   <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-<%= i%>  fa-stack-1x fa-inverse"></i>
+                          <i class="fa fa-<%= i %>  fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-          <% } %>
+                    </a>
+                <% } %>
 
-          <% if (i == "csdn" && config.links[i]) { %>
-              <a id="<%= i%>-icon-color" class="weight-icon-link" target="_blank" href="http://blog.csdn.net/<%= config.links[i]%>" data-toggle="tooltip" data-placement="top" title="CSDN博客">
-                          <span class="fa-stack fa-lg">
-                              <i class="fa fa-circle fa-stack-2x"></i>
-                              <i class="fa fa fa-stack-1x fa-inverse">C</i>
-                          </span>
-              </a>
-          <% } %>
+                <% if (i == "csdn" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank"
+                       href="<%= config.links[i] %>" data-toggle="tooltip" data-placement="top"
+                       title="CSDN博客">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa fa-stack-1x fa-inverse">C</i>
+                      </span>
+                    </a>
+                <% } %>
 
+                <% if (i == "qqmusic" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank"
+                       href="<%= config.links[i] %>" data-toggle="tooltip" data-placement="top"
+                       title="QQ音乐">
+                   <span class="fa-stack fa-lg">
+                       <i class="fa fa-circle fa-stack-2x"></i>
+                       <i class=" fa fa-stack-1x fa-inverse">
+                           <svg t="1617944199483" class="icon" viewBox="0 0 1025 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="1421" width="33" height="37">
+                               <path
+                                       d="M577.6 9.6C555.2 6.4 534.4 6.4 512 6.4 230.4 6.4 0 233.6 0 512s230.4 505.6 512 505.6 512-227.2 512-505.6c0-217.6-136-400-332.8-475.2 0 33.6-3.2 43.2-12.8 65.6-30.4 56-86.4 92.8-158.4 96-25.6 3.2-43.2 6.4-43.2 6.4 0 3.2 96 171.2 201.6 353.6 68.8 118.4 75.2 136 72 185.6-6.4 92.8-80 171.2-179.2 201.6-22.4 6.4-43.2 9.6-80 6.4-46.4-3.2-56-3.2-89.6-22.4-46.4-25.6-80-59.2-99.2-102.4-16-40-12.8-99.2 9.6-142.4 19.2-36.8 65.6-83.2 105.6-105.6 56-27.2 129.6-40 174.4-27.2 12.8 3.2 22.4 6.4 22.4 3.2 0 0-9.6-16-22.4-33.6-12.8-19.2-75.2-105.6-136-192-62.4-89.6-115.2-161.6-118.4-168-9.6-9.6 9.6-46.4 32-65.6 12.8-12.8 30.4-25.6 46.4-30.4 27.2-16 46.4-22.4 139.2-43.2 6.4-6.4 16-9.6 22.4-12.8z"
+                                       fill="#f4ea2a" p-id="1422"></path>
+                           </svg>
+                       </i>
+                   </span>
+                    </a>
+                <% } %>
 
-          <!-- </li> -->
-        <% } %>
-      <!-- </ul> -->
+                <% if (i == "neteasemusic" && config.links[i]) { %>
+                    <a id="<%= i %>-icon-color" class="weight-icon-link" target="_blank"
+                       href="<%= config.links[i] %>" data-toggle="tooltip" data-placement="top"
+                       title="网易云音乐">
+                   <span class="fa-stack fa-lg">
+                       <i class="fa fa-circle fa-stack-2x"></i>
+                       <i class=" fa fa-stack-1x fa-inverse">
+                            <svg t="1617983919037" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3520" width="37" height="37"><path d="M512 938.666667C276.352 938.666667 85.333333 747.648 85.333333 512S276.352 85.333333 512 85.333333s426.666667 191.018667 426.666667 426.666667-191.018667 426.666667-426.666667 426.666667z m-46.336-445.098667c10.24-35.84 45.866667-65.749333 84.906667-70.314667 7.978667 29.610667 16.554667 58.581333 23.253333 88.021334 2.261333 9.813333 1.578667 21.12-0.768 31.018666-9.088 38.058667-53.248 52.992-84.394667 29.226667-22.613333-17.28-31.658667-47.786667-22.997333-77.952z m162.858667-8.405333c-5.333333-19.84-10.922667-39.552-16.768-60.586667 21.333333 5.546667 38.741333 15.36 53.546666 29.781333 53.632 52.096 59.093333 140.8 12.544 201.856-48.426667 63.573333-134.613333 91.050667-214.528 68.48-98.218667-27.733333-162.474667-125.952-146.816-226.816 11.690667-75.434667 54.186667-128.170667 123.733334-159.274666 17.365333-7.765333 24.746667-23.893333 17.92-39.68-6.698667-15.530667-23.04-21.504-40.277334-14.634667-116.096 46.464-184.32 176.384-156.586666 298.112 30.421333 133.034667 149.12 220.288 284.8 207.317333 73.898667-7.04 134.997333-40.448 179.882666-100.138666 64.256-85.418667 55.338667-204.074667-19.754666-277.290667-28.416-27.733333-62.762667-43.434667-101.973334-49.194667-3.541333-0.554667-9.258667-2.218667-9.898666-4.522666-3.712-13.354667-7.68-26.965333-8.789334-40.704-1.237333-15.232 12.373333-27.306667 27.733334-27.52 10.794667-0.128 18.517333 5.546667 25.728 12.8 12.928 12.8 30.037333 13.738667 42.154666 2.645333 12.373333-11.264 12.629333-28.928 0.768-43.008-24.149333-28.672-67.669333-38.016-103.68-22.314667-36.138667 15.786667-56.362667 50.645333-51.2 89.301334 1.621333 11.946667 4.693333 23.765333 7.125334 35.925333l-11.093334 3.072a164.821333 164.821333 0 0 0-89.514666 60.330667c-39.296 52.053333-39.936 120.661333-1.749334 168.405333 54.357333 68.010667 159.872 54.784 192.981334-24.234667 12.117333-28.842667 11.733333-58.368 3.712-88.106666z" p-id="3521" fill="#d81e06"></path></svg>
+                       </i>
+                   </span>
+                    </a>
+                <% } %>
+
+                <!-- </li> -->
+            <% } %>
+            <!-- </ul> -->
+        </div>
     </div>
-  </div>
 
+    <script>
+        $.fn.extend({
+            hoverTips: function () {
+                var self = $(this);
+                var sw = self.get(0).switch;
+                if (!sw) {
+                    sw = true;
+                    var content = self.attr("tooltips");
+                    var htmlDom = $("<div class='tooltips'>")
+                        .addClass("toolTipInfo")
+                        .html("<p class='content'></p>"
+                            + "<p class='triangle-front'></p>"
+                            + "<p class='triangle-back'></p>");
+                    htmlDom.find("p.content").html(content);
+                }
+                self.on("mouseover", function () {
+                    $("body").append(htmlDom);
+                    var left = self.offset().left - htmlDom.outerWidth() / 2 + self.outerWidth() / 2;
+                    var top = self.offset().top - htmlDom.outerHeight() - parseInt(htmlDom.find(".triangle-front").css("border-width"));
+                    htmlDom.css({"left": left, "top": top - 10, "display": "block"});
+                    htmlDom.stop().animate({"top": top, "opacity": 1}, 300);
+                });
+                self.on("mouseout", function () {
+                    var top = parseInt(htmlDom.css("top"));
+                    htmlDom.stop().animate({"top": top - 10, "opacity": 0}, 300, function () {
+                        htmlDom.remove();
+                        sw = false;
+                    });
+                });
+            },
 
-  <script>
-  $.fn.extend({
-    hoverTips : function (){
-      var self = $(this);
-      var sw = self.get(0).switch;
-      if( !sw ) {
-        sw = true;
-        var content = self.attr("tooltips");
-        var htmlDom = $("<div class='tooltips'>")
-            .addClass("toolTipInfo")
-            .html("<p class='content'></p>"
-                + "<p class='triangle-front'></p>"
-                + "<p class='triangle-back'></p>");
-        htmlDom.find("p.content").html( content );
-      }
-      self.on("mouseover",function(){
-        $("body").append( htmlDom );
-        var left = self.offset().left - htmlDom.outerWidth()/2 + self.outerWidth()/2;
-        var top = self.offset().top - htmlDom.outerHeight() - parseInt(htmlDom.find(".triangle-front").css("border-width"));
-        htmlDom.css({"left":left,"top":top - 10,"display":"block"});
-        htmlDom.stop().animate({ "top" : top ,"opacity" : 1},300);
-      });
-      self.on("mouseout",function(){
-        var top = parseInt(htmlDom.css("top"));
-        htmlDom.stop().animate({ "top" : top - 10 ,"opacity" : 0},300,function(){
-          htmlDom.remove();
-          sw = false;
         });
-      });
-    },
 
-  });
-
-  $("#weixin-icon-color").hoverTips();
-  $("#qq-icon-color").hoverTips();
-  </script>
+        $("#weixin-icon-color").hoverTips();
+        $("#qq-icon-color").hoverTips();
+    </script>
 
 <% } %>

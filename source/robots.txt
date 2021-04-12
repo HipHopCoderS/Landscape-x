@@ -16,4 +16,4 @@ Disallow: /about/
 Disallow: /images/
 
 Sitemap: /sitemap.xml
-Sitemap: /baidusitemap.xml
+Sitemap: /post-sitemap.xml

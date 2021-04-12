@@ -2,39 +2,6 @@
 <%- partial('totop') %>
 <!-- totop end -->
 
-
-<% if (config.gitalk['enable']==true ){ %>
-  <script>
-    const gitalk = new Gitalk({
-      clientID: "<%= config.gitalk['clientID'] %>",
-      clientSecret: "<%= config.gitalk['clientSecret'] %>",
-      repo: "<%= config.gitalk['repo'] %>",
-      owner: "<%= config.gitalk['owner'] %>",
-      admin: "<%= config.gitalk['admin'] %>",
-      // id: location.pathname,      // Ensure uniqueness and length less than 50
-      id: "<%= page.date %>",      // Ensure uniqueness and length less than 50
-      distractionFreeMode: false  // Facebook-like distraction free mode
-    })
-    gitalk.render('gitalk-container')
-  </script>
-
-<% } else if (config.disqus_shortname){ %>
-  <script>
-    var disqus_shortname = '<%= config.disqus_shortname %>';
-    if (page.permalink){ 
-      var disqus_url = '<%= page.permalink %>';
-     } 
-    (function(){
-      var dsq = document.createElement('script');
-      dsq.type = 'text/javascript';
-      dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-<% } %>
-
-
 <!-- 百度分享 start -->
 <% if (config.baidushare ){ %>
 <div id="article-share-box" class="article-share-box">

@@ -1,0 +1,59 @@
+.donate_bar {
+  text-align: center;
+  margin-top: 5%
+}
+
+.donate_bar a.btn_donate {
+  display: inline-block;
+  width: 82px;
+  height: 82px;
+  margin-left: auto;
+  margin-right: auto;
+  background: url(http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif)no-repeat;
+  //<!-- 因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，为了在让打赏按钮显示效果正常 而 添加了以下几行 css，嵌入其它博客时不一定要它们。本段注释请在添加时删除-->
+  -webkit-transition: background 0s;
+  -moz-transition: background 0s;
+  -o-transition: background 0s;
+  -ms-transition: background 0s;
+  transition: background 0.5s
+
+
+}
+
+.donate_bar a.btn_donate:hover {
+  background-position: 0 -82px
+}
+
+.donate_bar .donate_txt {
+  display: block;
+  color: #9d9d9d;
+  font: 14px/2 "Microsoft Yahei"
+}
+.donate_bar.hidden{
+  display: none
+}
+
+.post-donate{
+  margin-top: 80px;
+}
+
+#donate_guide{
+  height: 210px;
+  width: 420px;
+  margin: 0 auto;
+}
+
+#donate_guide img{
+  height: 200px;
+  height: 200px;
+  border-radius: 20px;
+  transition: all .3s
+}
+
+#alipay_img{
+  border: 1px solid #0467D1;
+}
+
+#wechat_img{
+  border: 1px solid #1ED86C;
+}
