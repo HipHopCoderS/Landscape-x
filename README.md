@@ -1,4 +1,4 @@
-# ⭐️ landscape-x
+# ⭐️ Landscape-x
 
 
 Hexo 主题，感谢 [xiangming](https://github.com/xiangming/landscape-plus)针对原生主题进行了样式修改优化,支持hexo 3.x 和 hexo 2.x
@@ -6,11 +6,11 @@ Hexo 主题，感谢 [xiangming](https://github.com/xiangming/landscape-plus)针
 # [**`Demo`**](https://blog.hiphopcoder.com)
 
 
-## 🌈 主题特点:  
+## 🌈 主题特点:
 - UI 样式进行了改动
 - 最近文章 最新回复
 - 卜算子统计访问量
-- 百度分析，百度站长,谷歌分析，谷歌站长,360分析，360站长,Bing站长
+- SEO(百度分析,百度站长,谷歌分析,谷歌站长,360分析,360站长,Bing站长)
 - 添加页面滚动效果
 - gitalk评论
 - 打赏
@@ -51,18 +51,18 @@ Hexo 主题，感谢 [xiangming](https://github.com/xiangming/landscape-plus)针
  * 1. 克隆主题到hexo主题 `themes` 文件加下
 
 ```bash
-git clone git@github.com:HipHopCoderS/Landscape-x.git  
+git clone git@github.com:HipHopCoderS/Landscape-x.git
 ```
 
 
-- 2. 配置 _config.yml  
+- 2. 配置 _config.yml
 把主题文件下的 _config.yml  替换hexo 项目下的 _config.yml
 
 
 
 主要修改这几个参数，其他的参数可以参考官方的文档进行设置修改
 
-## 🌈 配置文件关键配置
+## 🌈 修改配置文件
 ### ❄️ 网站配置
 ```
 # Site
@@ -70,8 +70,8 @@ title: HipHop_&_Coder
 subtitle: 事在人为，功不唐捐！
 description: 喜欢HipHop的程序猿！
 keywords:  HipHop Coder Keep Real
-author: 卡尔西 
-language: zh-CN 
+author: 卡尔西
+language: zh-CN
 timezone: Asia/ShangHai
 
 # permalink (文章固定链接)
@@ -79,7 +79,7 @@ url: 替换个人网址链接
 permalink: :year/:abbrlink/
 
 # 设置主题
-theme: Landscape-X 
+theme: Landscape-X
 
 (其他配置可以参考官网根据需求进行配置)
 ```
@@ -87,10 +87,10 @@ theme: Landscape-X
 ### ❄️ 主题配置
 #### ⚙️ 1.网页布局配置
 ``` yml
-## Header 
+## Header
 (浏览器展示配置)
 menu:
-  home: / 
+  home: /
   archive: /archives
   user: /about.html
 
@@ -147,15 +147,15 @@ footer_img: footerNew.jpeg
 ## Links
 (个人链接跳转，顺序可以随意调整)
 links:
-    github-alt: 
-    zhihu: 
+    github-alt:
+    zhihu:
     weixin: weixin.png
     qq: qq.png
-    weibo: 
-    csdn: 
-    qqmusic: 
-    neteasemusic: 
-    envelope-o: 
+    weibo:
+    csdn:
+    qqmusic:
+    neteasemusic:
+    envelope-o:
     music:
     douban:
     facebook:
@@ -204,9 +204,9 @@ deploy:
 gitalk:
   clientID: ''
   clientSecret: ''
-  repo: 
-  owner: 
-  admin: 
+  repo:
+  owner:
+  admin:
   distractionFreeMode: false
 
 # hexo-algolia (https://github.com/oncletom/hexo-algolia)
@@ -228,7 +228,7 @@ addlink:
   before_text: <div class="copyright">作者：卡尔西  </br><span>本文地址：
   after_text: </span></br> 如果本文对你有帮助，欢迎微信,QQ联系,复制转载请注明作者和原文链接，谢谢!</br> 但管努力，莫问前程，事在人为，功不唐捐 ~  </div>
 
-# hexo-easy-tags-plugin 
+# hexo-easy-tags-plugin
 (https://github.com/dailyrandomphoto/hexo-easy-tags-plugin)
 (创建标签大小写忽略，防止标签冗余)
 easy_tags_plugin:
@@ -246,20 +246,20 @@ abbrlink:
 ### 推广分析配置
 (注册个人的站长账号，配置相应信息)
 # Baidu Analytics ID
-baidu_analytics: 
-baidu_site_verification: 
+baidu_analytics:
+baidu_site_verification:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
 # Google Analytics
-google_analytics: 
-google_site_verification: 
+google_analytics:
+google_site_verification:
 
 #qihu verification setting
-qihu_site_verification: 
+qihu_site_verification:
 
 # bing verification setting
-bing_site_verification: 
+bing_site_verification:
 
 ```
 
